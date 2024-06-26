@@ -1,0 +1,19 @@
+import math
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    def distance(self, other):
+        """Calculate the distance between this point and another point."""
+        return math.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2)
+    
+    def __str__(self):
+        """Return a string representation of the point."""
+        return f"Point({self.x}, {self.y})"
+
+# Example usage:
+point1 = Point(3, 4)
+point2 = Point(6, 8)
+print(f"The distance between {point1} and {point2} is {point1.distance(point2)}")
