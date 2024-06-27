@@ -17,8 +17,8 @@ class Line:
         try:
             return (self.point2.y - self.point1.y) / (self.point2.x - self.point1.x)
         except ZeroDivisionError:
-            return None  # Can return 'inf' or raise an exception if you prefer
-
+            return None
+        
     def point_on_line(self, point):
        
         m = self.slope()
@@ -27,7 +27,7 @@ class Line:
         elif m is None:
             return False
         b = self.point1.y - m * self.point1.x
-        # Now let's check if the point satisfies the line equation
+
         return math.isclose(point.y, m * point.x + b)
 
     def __str__(self):
